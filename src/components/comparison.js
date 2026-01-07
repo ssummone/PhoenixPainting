@@ -2,18 +2,18 @@
 const projects = {
     'house19_front': {
         title: 'House 19 - Front Elevation',
-        before: '/src/assets/gallery/house 19 old.jpg',
-        after: '/src/assets/gallery/house19_front.jpg'
+        before: '/assets/gallery/house 19 old.jpg',
+        after: '/assets/gallery/house19_front.jpg'
     },
     'house23': {
         title: 'House 23 - Full Bungalow Restoration',
-        before: '/src/assets/gallery/house 23 old.jpg',
-        after: '/src/assets/gallery/house23.jpg'
+        before: '/assets/gallery/house 23 old.jpg',
+        after: '/assets/gallery/house23.jpg'
     },
     'house25': {
         title: 'House 25 - Rear Renovation',
-        before: '/src/assets/gallery/house 25 old.jpg',
-        after: '/src/assets/gallery/house25.jpg'
+        before: '/assets/gallery/house 25 old.jpg',
+        after: '/assets/gallery/house25.jpg'
     }
 };
 
