@@ -1,0 +1,210 @@
+/* Hero Section - Overhaul */
+.hero {
+    position: relative;
+    /* Use a dark overlay on a background image */
+    /* Use a dark overlay on a background image */
+    background: var(--c-navy);
+    /* Fallback */
+    /* background-image removed for video */
+    color: var(--c-white);
+    padding: 140px 0 100px;
+    text-align: left;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* Ensure video doesn't spill out */
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Dark overlay to make text readable over video */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 25, 47, 0.5);
+    z-index: 1;
+}
+
+.hero::before {
+    display: none;
+    /* Remove old radial gradient */
+}
+
+.hero-content {
+    max-width: 1200px;
+    position: relative;
+    z-index: 2;
+    /* Content sits above video and overlay */
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-lg);
+    max-width: 800px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-benefits {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.benefit-icon {
+    color: var(--c-white);
+    /* White checkmarks */
+    font-weight: bold;
+}
+
+.hero-lead {
+    font-size: 1.25rem;
+    color: #e0e0e0;
+    margin-bottom: var(--spacing-xl);
+    max-width: 700px;
+    font-weight: 500;
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+/* Green Strip (Now Phoenix Red) */
+.cta-strip {
+    background-color: var(--c-orange);
+    color: var(--c-white);
+    padding: var(--spacing-lg) 0;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.cta-strip-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+/* Services Bar - Horizontal Layout */
+.services-bar {
+    background-color: var(--c-navy);
+    color: var(--c-white);
+    padding: var(--spacing-lg) 0;
+}
+
+.services-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--c-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    padding: 12px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.service-item:hover {
+    background-color: var(--c-orange);
+    border-color: var(--c-orange);
+    transform: translateY(-2px);
+}
+
+.service-item svg {
+    stroke: currentColor;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    .services-row {
+        justify-content: center;
+    }
+
+    .service-item {
+        flex: 1 1 45%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .service-item {
+        flex: 1 1 100%;
+    }
+}
+
+/* Gallery Section */
+#gallery {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--c-white);
+}
+
+/* About Section - Split */
+.about-preview {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xxl);
+    align-items: center;
+}
+
+.about-text h2 {
+    color: #2ecc71;
+    /* Green title from ref? Or maybe keep Red? Let's use Red for now or a Green to contrast */
+    color: var(--c-orange);
+    /* Keeping brand consistency */
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-strip-inner {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+}

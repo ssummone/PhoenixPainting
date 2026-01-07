@@ -1,0 +1,96 @@
+/* Drag Slider */
+.gallery-slider-container {
+    overflow: hidden;
+    cursor: grab;
+    position: relative;
+    /* Reset inline styles used for placeholder */
+    background: transparent !important;
+    min-height: auto !important;
+    display: block !important;
+    margin-top: var(--spacing-lg);
+}
+
+.gallery-slider-container:active {
+    cursor: grabbing;
+}
+
+.slider-track {
+    display: flex;
+    gap: var(--spacing-md);
+    width: max-content;
+    /* Allow track to be as long as content */
+    padding: var(--spacing-sm) 0;
+    transition: transform 0.1s ease-out;
+    /* Smooth follow, overridden by drag */
+    user-select: none;
+    margin: 0 auto;
+}
+
+.slide-card {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--c-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    pointer-events: none;
+    /* Prevent image dragging issues */
+}
+
+.slide-image {
+    height: 200px;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+.slide-content {
+    padding: var(--spacing-md);
+}
+
+.slide-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--c-navy);
+}
+
+.slide-content p {
+    font-size: 0.9rem;
+    color: var(--c-grey-text);
+    margin-bottom: 0;
+}
+
+.slide-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.slide-image {
+    position: relative;
+    /* For icon positioning */
+}
+
+.slide-overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(211, 47, 47, 0.9);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.slide-card:hover .slide-overlay-icon {
+    opacity: 1;
+}

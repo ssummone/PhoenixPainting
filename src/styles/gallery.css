@@ -1,0 +1,248 @@
+/* Gallery Page Styles */
+
+/* Gallery Overview Hero */
+.gallery-hero {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-color: var(--c-navy);
+    color: var(--c-white);
+}
+
+.gallery-hero h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.gallery-hero .subtitle {
+    text-align: center;
+    opacity: 0.8;
+    margin-bottom: 50px;
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Force 3 equal columns */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.gallery-card {
+    background: var(--c-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-card-image {
+    position: relative;
+    aspect-ratio: 4/3;
+    /* Force consistent proportions */
+    overflow: hidden;
+}
+
+.gallery-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-image img {
+    transform: scale(1.05);
+}
+
+.gallery-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(211, 47, 47, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-card-overlay {
+    opacity: 1;
+}
+
+.gallery-card-overlay span {
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.gallery-card-info {
+    padding: 12px 16px;
+    color: var(--c-navy);
+}
+
+.gallery-card-info h3 {
+    margin-bottom: 5px;
+}
+
+.gallery-card-info p {
+    color: var(--c-grey-text);
+    margin: 0;
+}
+
+/* Comparison Section Styles */
+.comparison-hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+    background-color: var(--c-navy);
+    color: var(--c-white);
+    min-height: 100vh;
+}
+
+/* Comparison Wrapper - The container for both images */
+.comparison-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 4/3;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 4px solid var(--c-white);
+    background: #222;
+}
+
+/* BEFORE image (Old) - STATIC background, full width */
+.img-before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.img-before img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* AFTER image (New) - Slides in from the RIGHT */
+.img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Anchored to right */
+    left: auto;
+    width: 0%;
+    /* Starts hidden, grows as slider moves left */
+    height: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* The after image must align to the RIGHT edge */
+.img-overlay img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Align to right edge so it reveals from right */
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Slider Handle */
+.slider-handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    /* Starts at far right */
+    width: 4px;
+    background: var(--c-white);
+    z-index: 10;
+    cursor: col-resize;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(-50%);
+}
+
+.handle-circle {
+    width: 50px;
+    height: 50px;
+    background: var(--c-red);
+    border: 3px solid var(--c-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.handle-arrows {
+    color: white;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* Labels */
+.label {
+    position: absolute;
+    top: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    z-index: 15;
+    pointer-events: none;
+}
+
+.label-before {
+    left: 20px;
+}
+
+.label-after {
+    right: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--c-white);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-link:hover {
+    color: var(--c-red);
+}

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Gallery | Phoenix Wall Coatings</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/gallery.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">
+                <img src="/src/assets/logo.png" alt="Phoenix Wall Coatings Logo" height="120">
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="/#services">Services</a></li>
+                    <li><a href="/rendering-repairs.html">Rendering & Repairs</a></li>
+                    <li><a href="/gallery.html" class="active">Gallery</a></li>
+                    <li><a href="/#about">About</a></li>
+                    <li><button class="btn btn-primary" data-trigger="quote-popup">Request Quote</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Gallery Overview Section -->
+        <section id="gallery-overview" class="gallery-hero">
+            <div class="container">
+                <h1>Our Project Gallery</h1>
+                <p class="subtitle">Click on a project to see the before & after transformation</p>
+
+                <div class="gallery-grid">
+                    <!-- House 19 -->
+                    <div class="gallery-card" data-project="house19_front">
+                        <div class="gallery-card-image">
+                            <img src="/src/assets/gallery/house19_front.jpg" alt="House 19 Front">
+                            <div class="gallery-card-overlay">
+                                <span>View Before & After ↔</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-info">
+                            <h3>House 19</h3>
+                            <p>Complete K-Rend application and seal.</p>
+                        </div>
+                    </div>
+
+                    <!-- House 23 -->
+                    <div class="gallery-card" data-project="house23">
+                        <div class="gallery-card-image">
+                            <img src="/src/assets/gallery/house23.jpg" alt="House 23">
+                            <div class="gallery-card-overlay">
+                                <span>View Before & After ↔</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-info">
+                            <h3>House 23</h3>
+                            <p>Weatherproofing and crack repair.</p>
+                        </div>
+                    </div>
+
+                    <!-- House 25 -->
+                    <div class="gallery-card" data-project="house25">
+                        <div class="gallery-card-image">
+                            <img src="/src/assets/gallery/house25.jpg" alt="House 25">
+                            <div class="gallery-card-overlay">
+                                <span>View Before & After ↔</span>
+                            </div>
+                        </div>
+                        <div class="gallery-card-info">
+                            <h3>House 25</h3>
+                            <p>Full exterior renovation & decking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison View Section (Hidden by default) -->
+        <section id="comparison-view" class="comparison-hero" style="display: none;">
+            <div class="container">
+                <a href="#" class="back-link" id="back-to-gallery">← Back to Gallery</a>
+                <h1 id="project-title">Project Transformation</h1>
+
+                <div class="comparison-wrapper" id="comparison-container">
+                    <!-- BEFORE image (Old) - Static background -->
+                    <div class="img-before comparison-image">
+                        <span class="label label-before">Before</span>
+                    </div>
+
+                    <!-- AFTER image (New) - Slides in from right -->
+                    <div class="img-overlay comparison-image" id="overlay-layer">
+                        <span class="label label-after">After</span>
+                    </div>
+
+                    <div class="slider-handle" id="slider-handle">
+                        <div class="handle-circle">
+                            <span class="handle-arrows">↔</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 40px; text-align: center;">
+                    <button class="btn btn-primary" data-trigger="quote-popup">Get This Result for Your Home</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-navy text-white section-padding">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>Phoenix Wall Coatings</h3>
+                    <p>Glasgow's Premium Wall Protection.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>Glasgow, Scotland</p>
+                    <p>0141 123 4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Phoenix Wall Coatings Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quote Modal -->
+    <div id="quote-modal" class="modal" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" aria-label="Close modal">&times;</button>
+            <h3>Get Your Free Quote</h3>
+            <p>10% better value than any competitor quote.</p>
+            <form id="lead-form" method="POST">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="postcode" class="form-label">Postcode</label>
+                    <input type="text" id="postcode" name="postcode" class="form-input" placeholder="e.g. G41 2AB"
+                        required>
+                </div>
+                <div class="form-group">
+                    <label for="property-type" class="form-label">Property Type</label>
+                    <select id="property-type" name="property_type" class="form-select">
+                        <option value="detached">Detached</option>
+                        <option value="semi">Semi-Detached</option>
+                        <option value="terraced">Terraced</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="service" class="form-label">Service Required</label>
+                    <select id="service" name="service" class="form-select">
+                        <option value="k-rend">K-Rend Wall Coating</option>
+                        <option value="sealing">Weatherproof Sealing</option>
+                        <option value="repairs">Rendering Repairs</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary full-width">Request Quote</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/src/components/comparison.js"></script>
+    <script type="module" src="/src/components/popup.js"></script>
+</body>
+
+</html>
