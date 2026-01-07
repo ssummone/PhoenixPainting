@@ -11,6 +11,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         gallery: resolve(__dirname, 'gallery.html'),
         renderingRepairs: resolve(__dirname, 'rendering-repairs.html'),
+        kRend: resolve(__dirname, 'k-rend.html'),
+        weatherproof: resolve(__dirname, 'weatherproof-sealing.html'),
       },
       output: {
         manualChunks: undefined,
