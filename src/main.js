@@ -4,8 +4,10 @@ import './styles/home.css';
 import './styles/slider.css';
 import { initPopup } from './components/popup.js';
 import { initSlider } from './components/slider.js';
+import { inject } from '@vercel/analytics';
 
-
+// Initialize Vercel Web Analytics
+inject();
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
